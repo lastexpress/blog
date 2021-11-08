@@ -1,0 +1,15 @@
+{% load static %}
+<!-- Page Banner -->
+	<div class="container-fluid no-left-padding no-right-padding page-banner error-banner">
+		<!-- Container -->
+		<div class="container">
+			<div class="page-title">
+				<h3>{{ banner_title.banner_name }}</h3>
+			</div>
+			<ol class="breadcrumb">
+				<li><a href="{% url 'bloges:index' %}">{{ banner_title.banner_btn_1 }}</a></li>
+				<li><a href="#">{{ banner_title.banner_btn_2 }}</a></li>
+				<li class="active">{{ banner_title.banner_btn_3 }}</li>
+			</ol>
+		</div><!-- Container /- -->
+	</div><!-- Page Banner /- -->

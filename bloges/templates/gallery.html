@@ -1,0 +1,141 @@
+{%  load static %}
+<!-- Gallery Section -->
+		<div id="gallery-section" class="container-fluid no-left-padding no-right-padding gallery-section">
+			<!-- Container -->
+			<div class="container">
+				<!-- Section Header -->
+				<div class="section-header">
+					<h3>Digital Portfolio</h3>
+				</div><!-- Section Header /- -->
+				<!-- Gallery Filter -->
+				<div class="gallery-category">
+					<ul id="filters">
+						<li><a class="active" data-filter="*" href="" title="Show All">Показать все</a></li>
+						
+						<li><a data-filter=".car" href="#" title="Car">car</a></li>
+						<li><a data-filter=".girl" href="#" title="Girl">girl</a></li>
+						<li><a data-filter=".mushrooms" href="#" title="Mushrooms">Mushroms</a></li>
+						<li><a data-filter=".people" href="#" title="People">People</a></li> 
+						
+					</ul>
+				</div><!-- Gallery Filter /- -->
+				<!-- Gallery List -->
+				<div class="gallery-list">
+					{% for photo in photo_car %}
+					<div class="col-md-4 col-xs-6 no-padding gallery-box car">
+						<div class="gallery-content">
+							<i><img src="{{ photo.image.url }}" alt="Gallery" /></i>
+							<span>car</span>
+							<div class="gallery-detail">
+								<h3></h3>
+								<a href="#"><i class="fa fa-heart-o"></i>80 Likes</a>
+								<a class="zoom" href="{{ photo.image.url }}"><i class="fa fa-expand"></i>Zoom in</a>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+
+					{% for photogirl in photo_girl %}
+					<div class="col-md-4 col-xs-6 no-padding gallery-box girl">
+						<div class="gallery-content">
+							<i><img src="{{ photogirl.image.url }}" alt="Gallery" /></i>
+							<span>girl</span>
+							<div class="gallery-detail">
+								<h3>Project Title</h3>
+								<a href="#"><i class="fa fa-heart-o"></i>80 Likes</a>
+								<a class="zoom" href="{{ photogirl.image.url }}"><i class="fa fa-expand"></i>Zoom in</a>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+
+					{% for photomush in photo_mushrooms %}
+					<div class="col-md-4 col-xs-6 no-padding gallery-box mushrooms">
+						<div class="gallery-content">
+							<i><img src="{{ photomush.image.url }}" alt="Gallery" /></i>
+							<span>people</span>
+							<div class="gallery-detail">
+								<h3>Project Title</h3>
+								<a href="#"><i class="fa fa-heart-o"></i>80 Likes</a>
+								<a class="zoom" href="{{ photomush.image.url }}"><i class="fa fa-expand"></i>Zoom in</a>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+
+					{% for photope in photo_people %}
+					<div class="col-md-4 col-xs-6 no-padding gallery-box people">
+						<div class="gallery-content">
+							<i><img src="{{ photope.image.url }}" alt="Gallery" /></i>
+							<span>nature</span>
+							<div class="gallery-detail">
+								<h3>Project Title</h3>
+								<a href="#"><i class="fa fa-heart-o"></i>80 Likes</a>
+								<a class="zoom" href="{{ photope.image.url }}"><i class="fa fa-expand"></i>Zoom in</a>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+
+					<!--
+					<div class="col-md-4 col-xs-6 no-padding gallery-box digital">
+						<div class="gallery-content">
+							<i><img src="{% static 'images/JuBXa6z2iOQ.jpg' %}" alt="Gallery" /></i>
+							<span>digital</span>
+							<div class="gallery-detail">
+								<h3>Project Title</h3>
+								<a href="#"><i class="fa fa-heart-o"></i>80 Likes</a>
+								<a class="zoom" href="{% static 'images/JuBXa6z2iOQ.jpg' %}"><i class="fa fa-expand"></i>Zoom in</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-xs-6 no-padding gallery-box branding">
+						<div class="gallery-content">
+							<i><img src="{% static 'images/gallery-6.jpg' %}" alt="Gallery" /></i>
+							<span>Branding</span>
+							<div class="gallery-detail">
+								<h3>Project Title</h3>
+								<a href="#"><i class="fa fa-heart-o"></i>80 Likes</a>
+								<a class="zoom" href="{% static 'images/gallery-1.jpg' %}"><i class="fa fa-expand"></i>Zoom in</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-xs-6 no-padding gallery-box people">
+						<div class="gallery-content">
+							<i><img src="{% static 'images/gallery-7.jpg' %}" alt="Gallery" /></i>
+							<span>people</span>
+							<div class="gallery-detail">
+								<h3>Project Title</h3>
+								<a href="#"><i class="fa fa-heart-o"></i>80 Likes</a>
+								<a class="zoom" href="{% static 'images/gallery-1.jpg' %}"><i class="fa fa-expand"></i>Zoom in</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-xs-6 no-padding gallery-box nature">
+						<div class="gallery-content">
+							<i><img src="{% static 'images/gallery-8.jpg' %}" alt="Gallery" /></i>
+							<span>nature</span>
+							<div class="gallery-detail">
+								<h3>Project Title</h3>
+								<a href="#"><i class="fa fa-heart-o"></i>80 Likes</a>
+								<a class="zoom" href="{% static 'images/gallery-1.jpg' %}"><i class="fa fa-expand"></i>Zoom in</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-xs-6 no-padding gallery-box digital">
+						<div class="gallery-content">
+							<i><img src="{% static 'images/gallery-9.jpg' %}" alt="Gallery" /></i>
+							<span>digital</span>
+							<div class="gallery-detail">
+								<h3>Project Title</h3>
+								<a href="#"><i class="fa fa-heart-o"></i>80 Likes</a>
+								<a class="zoom" href="{% static 'images/gallery-1.jpg' %}"><i class="fa fa-expand"></i>Zoom in</a>
+							</div>
+						</div>
+					</div> -->
+					
+				</div><!-- Gallery List /- -->
+
+				
+			</div><!-- Container /- -->
+		</div><!-- Gallery Section /- -->

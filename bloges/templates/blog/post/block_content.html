@@ -1,0 +1,210 @@
+{% load static %}
+
+<main class="site-main">
+	{% with comments.count as total_comments %}
+			<!-- Blog -->
+			<div class="container-fluid no-left-padding no-right-padding blog-post">
+				<!-- Container -->
+				<div class="container">
+					<!-- Row -->
+					<div class="row">
+						<!-- Content Area -->
+						<div class="col-md-9 col-sm-8 content-area">
+							<article class="type-post">
+								<div class="entry-cover">
+									<img src="{{ post.fm_img.url }}" alt="Blog" />
+									<div class="post-meta">
+										<a href="#"><span>{{ post.publish.day }}<br>den</span>{{ post.publish.month }}<br>mnth</a>
+									</div>
+								</div>
+								<div class="entry-content">
+									<div class="entry-header">
+										<h3 class="entry-title"><a href="#">{{ post.title }}</a></h3>
+										<div class="entry-meta">
+											<span><i class="fas fa-user"></i><a href="#">4 Comments</a></span>
+											<span><i class="fa fa-clock-o"></i><a href="#">{{ post.publish }}</a></span>
+											<span><i class="fas fa-comment"></i><a href="#">{{ total_comments }} Comments</a></span>
+										</div>
+									</div>
+									<p>{{ post.body }}</p>
+									{# <p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.</p> #}
+								</div>
+								<div class="tags-share-block">
+									<!--<div class="tags">
+										<span>Tags :</span>
+										<a href="#">{{ post.tags.all|join:"" }}</a>
+										<a href="#" title="Auto">Auto</a>
+										<a href="#" title="Cars">Cars</a>
+										<a href="#" title="vehicles">vehicles</a>
+									</div>-->
+									<div class="share-block">
+										<a href="{% url 'bloges:post_share' post.id %}" title="Share"><i class="fa fa-share"></i> Share this Post</a>
+									</div>
+								</div>
+								<div class="about-author">
+									<i><img src="{% static 'images/about-author.jpg' %}" alt="Author" /></i>
+									<h3>About the author</h3>
+									<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet</p>
+								</div>
+							</article>
+							<div id="comments" class="comments-area">
+								<h2 class="comments-title">Comments</h2>
+			{% for comment in comments %}
+								<ol class="comment-list">
+									<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1 parent">
+										<div class="comment-body">
+											<footer class="comment-meta">
+												<div class="comment-author vcard">
+													<img alt="img" src="{% static 'images/comment-1.jpg' %}" class="avatar avatar-72 photo"/>
+													<b class="fn">{{ comment.name }}</b>
+												</div>
+												<div class="comment-metadata">
+													<a href="#">{{ comment.created }}</a>											
+												</div>
+											</footer>
+											<div class="comment-content">
+												<p>{{ comment.body }}</p>
+											</div>
+											<div class="reply">
+												<a href="#">10 Likes</a>
+												<a rel="nofollow" class="comment-reply-link" href="#">Reply</a>
+											</div>
+										</div>
+									</li>
+				{% empty %}
+										<div class="comment-content">
+											<p>Нет комментариев, добавьте первый !</p>
+										</div>
+									<!--<li class="comment byuser comment-author-admin bypostauthor even thread-odd thread-alt depth-1">
+										<div class="comment-body">
+											<footer class="comment-meta">
+												<div class="comment-author vcard">
+													<img alt="img" src="assets/images/comment-2.jpg" class="avatar avatar-72 photo"/>
+													<b class="fn">Mandy Janco</b>
+												</div>
+												<div class="comment-metadata">
+													<a href="#">29 Aug 2016</a>											
+												</div>
+											</footer>
+											<div class="comment-content">
+												<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor</p>
+											</div>
+											<div class="reply">
+												<a href="#">25 Likes</a>
+												<a rel="nofollow" class="comment-reply-link" href="#">Reply</a>
+											</div>
+										</div>
+									</li>
+									<li class="comment byuser comment-author-admin bypostauthor even thread-odd thread-alt depth-1">
+										<div class="comment-body">
+											<footer class="comment-meta">
+												<div class="comment-author vcard">
+													<img alt="img" src="assets/images/comment-3.jpg" class="avatar avatar-72 photo"/>
+													<b class="fn">Canady France</b>
+												</div>
+												<div class="comment-metadata">
+													<a href="#">05 Sep 2016</a>
+												</div>
+											</footer>
+											<div class="comment-content">
+												<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor</p>
+											</div>
+											<div class="reply">
+												<a href="#">15 Likes</a>
+												<a rel="nofollow" class="comment-reply-link" href="#">Reply</a>
+											</div>
+										</div>
+									</li>-->
+								</ol><!-- .comment-list -->
+			{% endfor %}
+		{% endwith %}
+								<!-- Comment Form -->
+								<div id="respond" class="comment-respond">
+									<h2 id="reply-title" class="comment-reply-title">Post a Comment</h2>
+									<form method="post" id="commentform" class="comment-form">
+					{% csrf_token %}
+					{{ comment_form.as_p }}
+										<!--<p class="comment-form-comment">
+											<textarea id="comment" name="comment" rows="8" placeholder="Write your comment here" required="required"></textarea>
+										</p>
+										<p class="comment-form-author">
+											<input id="author" name="author" placeholder="Your full name" size="30" maxlength="245" required="required" type="text"/>
+										</p>
+										<p class="comment-form-email">
+											<input id="email" name="email" placeholder="Email address" required="required" type="email"/>
+										</p>
+										<p class="form-submit">
+										</p>-->
+										<input name="submit" class="submit" value="Submit" type="submit"/>
+									</form>
+								</div><!-- Comment Form /- -->
+							</div>							
+						</div><!-- Content Area /- -->
+
+						<!-- Widget Area -->
+						<div class="col-md-3 col-sm-4 widget-area">
+							<!-- Widget : Search -->
+							<aside class="widget widget_search">
+								<form method="get" class="searchform" action="#">
+									<div class="input-group">
+										<input placeholder="Search Here" class="form-control" required="" type="text"/>
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+										</span>
+									</div>
+								</form>
+							</aside><!-- Widget: Search /- -->
+							<!-- Widget : Categories -->
+							<aside id="categories" class="widget widget_categories">
+								<h3 class="widget-title">{{ category_title.category_title }}</h3>
+								<ul>
+					{% for obj_category in category_name %}
+										<li><a href="{% url 'bloges:category_list' obj_category.slug %}">{{ obj_category.category_name }}</a></li>
+					{% endfor %}
+									<!--<li><a href="#">Egg Fryed Rice With Vegitable</a></li>
+									<li><a href="#">Grill Chickentry Foodmanjuri</a></li>
+									<li><a href="#">Fishfry Apilimied Dish</a></li>
+									<li><a href="#">Intepsion California Epsia</a></li>
+									<li><a href="#">Soadynegth Ofriaplat Disha</a></li>-->
+								</ul>
+							</aside><!-- Widget: Categories /- -->
+							<!-- Widget : Recent Post -->
+							<aside class="widget widget_recentposts">
+								<h3 class="widget-title">Recent POSTS</h3>
+					{% for recent_post in recent_posts %}
+								<div class="latest-content">
+									<a href="{{ recent_post.get_absolute_url }}" title="Recent Posts"><i><img src="{{ recent_post.fm_img.url }}" class="wp-post-image main-img" alt="blog-1"></i></a><br>
+									<h5 class="recent-title"><a title="Pellentesque suscipit ante at" href="{{ recent_post.get_absolute_url }}">{{ recent_post.title }}</a></h5>
+									<span><a href="{{ recent_post.get_absolute_url }}">{{ recent_post.publish }}</a></span>
+								</div>
+					{% endfor %}
+								<!--<div class="latest-content">
+									<a href="#" title="Recent Posts"><i><img src="assets/images/rcnt-2.png" class="wp-post-image" alt="blog-1"></i></a>
+									<h5><a class="tc_dark tc_green_h" title="Pellentesque suscipit ante at" href="#">Special restaurant with nonveg porn</a></h5>
+									<span><a href="#">June 09, 2016</a></span>
+								</div>
+								<div class="latest-content">
+									<a href="#" title="Recent Posts"><i><img src="assets/images/rcnt-3.png" class="wp-post-image" alt="blog-1"></i></a>
+									<h5><a title="Pellentesque suscipit ante at" href="#">fishfried Chicken Qualit anjascan food</a></h5>
+									<span><a href="#">April  22, 2016</a></span>
+								</div>
+							</aside>--><!-- Widget : Recent Post -->
+							<!-- Widget : Tags -->
+							<!--<aside class="widget widget_latesttweets">
+								<h3 class="widget-title">Tags: </h3>
+								<div class="tagcloud">
+									<a href="#" title="Food">food</a>
+									<a href="#" title="Break fast & LUNCH">break fast & LUNCH</a>
+									<a href="#" title="Drinks">Drinks</a>
+									<a href="#" title="DINNER & EVENTS">DINNER & EVENTS</a>
+									<a href="#" title="Serve">serve</a>
+									<a href="#" title="Chef">chef</a>
+									<a href="#" title="Blog">Blog</a>
+								</div>
+							</aside>--><!-- Widget : Tags /- -->
+						</div><!-- Widget Area /- -->
+					</div><!-- Row /- -->
+				</div><!-- Container /- -->
+			</div><!-- Blog -->
+			
+		</main>

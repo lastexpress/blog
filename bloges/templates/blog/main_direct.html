@@ -1,0 +1,11 @@
+{% extends 'blog/base_blog.html' %}
+{% load static %}
+
+{% block blog %}
+	{% include 'blog/page_banner.html' %}
+
+	{% include 'blog/blog_post.html' %}
+
+	{% include 'blog/pagination.html' with page=posts %}
+
+{% endblock %}

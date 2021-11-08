@@ -1,0 +1,12 @@
+{% extends 'blog/post/category_base.html' %}
+{% load static %}
+
+{% block listscat %}
+	
+	{% include "blog/post/page_banner1.html" %}
+
+	{% include "blog/post/blog.html" %}
+
+	{% include "blog/post/pagination.html" with page=posts %}
+
+{% endblock %}

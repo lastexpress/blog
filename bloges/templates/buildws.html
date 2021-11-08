@@ -1,0 +1,45 @@
+{% load static %}
+<!-- Build Sites Section -->
+			<div id="build-section" class="container-fluid no-left-padding no-right-padding build-section">
+				<!-- Container -->
+				<div class="container">
+					<!-- Row -->
+					<div class="row">
+						<div class="col-sm-6 col-xs-12">
+							<div class="build-content">
+								<div class="build-title">
+									<h3>{{ build_txt.bw_title }} <span>quickly</span></h3>
+									<p>{{ build_txt.bw_desc }}</p>
+								</div>
+								<div class="build-detail row">
+									<div class="col-xs-4">
+										<div class="build-box">
+											<i class="fa fa-desktop"></i>
+											<h4>Install theam</h4>
+										</div>
+									</div>
+									<div class="col-xs-4">
+										<div class="build-box">
+											<i class="fa fa-files-o"></i>
+											<h4>Choose Demo</h4>
+										</div>
+									</div>
+									<div class="col-xs-4">
+										<div class="build-box">
+											<i class="fa fa-globe"></i>
+											<h4>Go Live</h4>
+										</div>
+									</div>
+								</div>
+								{% for btns in build_btn %}
+								<a href="#" class="learn-more" title="Learn More">{{ btns.bb_btn }}</a>
+								<!-- <a href="#" class="purcase-now" title="Purchase now">Purchase now</a> -->
+								{% endfor %}
+							</div>
+						</div>
+						<div class="col-sm-6 col-xs-12 build-image">
+							<img src="{{ build_img.main_img.url }}" alt="Image" />
+						</div>
+					</div><!-- Row /- -->
+				</div><!-- Container /- -->
+			</div><!-- Build Sites Section /- -->

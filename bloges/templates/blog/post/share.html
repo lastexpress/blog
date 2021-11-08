@@ -1,0 +1,35 @@
+{% extends 'blog/post/category_base.html' %}
+{% load static %}
+
+<div class="forms">
+	<div class="forms-title">
+	{% block title %}<h1>ПОДЕЛИТЬСЯ ПОСТОМ</h1>{% endblock %}
+	</div>
+	{% block content %}
+		{% if sent %}
+			<h1 class="">E-mail successful</h1>
+			<p>
+				"{{ post.title }}" was successfully sent to {{ form.cleaned_data.to }}.
+			</p>
+		{% else %}
+		<div class="forms-message">
+			<div class="forms-title">
+				<h1 class="">Отправить <br>"{{ post.title }}" <br>по E-mail</h1>
+			</div>
+			<div class="main-forms">
+				<form method="post">
+					<ul class="forms-list">
+						<li id="name" class="contact">Имя: {{ form.name }}</li>
+						<li id="email" class="contact">Email: {{ form.email }}</li>
+						<li id="to" class="contact">Кому: {{ form.to }}</li>
+						<li id="comments" class="contact">Комментарий: {{ form.comments }}</li>
+						<!--{{ form.as_p }}-->
+						{% csrf_token %}
+					</ul>
+					<input type="submit" name="" value="Send E-mail">
+				</form>
+			</div>
+		{% endif %}
+		</div>
+		{% endblock %}
+</div>

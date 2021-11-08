@@ -1,0 +1,282 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+	<title>Home - Prestige</title>
+
+	<!-- Standard Favicon -->
+	
+	
+	<!-- For iPhone 4 Retina display: -->
+	<link rel="apple-touch-icon-precomposed" href="{% static 'images//apple-touch-icon-114x114-precomposed.png' %}">
+	
+	<!-- For iPad: -->
+	<link rel="apple-touch-icon-precomposed" href="{% static 'images//apple-touch-icon-72x72-precomposed.png' %}">
+	
+	<!-- For iPhone: -->
+	<link rel="apple-touch-icon-precomposed" href="{% static 'images//apple-touch-icon-57x57-precomposed.png' %}">	
+	
+	<!-- Library - Google Font Familys -->
+	<link href="https://fonts.googleapis.com/css?family=Exo+2:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Montserrat+Alternates:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Poppins:300,400,500,600,700|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Lato" rel="stylesheet"> 
+		
+	<!-- Library -->
+    <link href="{% static 'css/lib.css' %}" rel="stylesheet">    
+	
+	<!-- Custom - Common CSS -->
+	<link href="{% static 'css/plugins.css' %}" rel="stylesheet">
+	<link href="{% static 'css/elements.css' %}" rel="stylesheet">	
+	<link href="{% static 'css/rtl.css' %}" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<link id="color" href="{% static 'css/color-schemes/default.css' %}" rel="stylesheet"/>
+
+	<link rel="stylesheet" href="{% static 'css/uikit.min.css' %}" />
+
+	<!--[if lt IE 9]>
+		<script src="js/html5/respond.min.js"></script>
+    <![endif]-->
+	
+  <link rel="icon" href="http://fototeg.ru/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="http://fototeg.ru/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+</head>
+
+<body data-offset="200" data-spy="scroll" data-target=".ownavigation">
+	<!-- Loader -->
+	<div id="site-loader" class="load-complete">
+		<div class="loader">
+			<div class="line-scale"><div></div><div></div><div></div><div></div><div></div></div>
+		</div>
+	</div><!-- Loader /- -->	
+	
+	<!-- Style Switcher -->
+	<!-- <div class="color-switcher" id="choose_color">
+		<a href="#." class="picker_close">
+			<i class="fa fa-gear fa-spin"></i>
+		</a>
+		<div class="style-picker">
+			<h3>Select Your Style</h3>
+			<div class="color-switcher-block">
+				<p>Choose Colour style</p>
+				<ul class="">
+					<li><a href="#." class="red" id="default"><img src="{% static 'images/red.jpg' %}" alt="red"/></a></li>
+					<li><a href="#." class="green" id="green"><img src="{% static 'images/green.jpg' %}" alt="green"/></a></li>
+					<li><a href="#." class="skyblue" id="skyblue"><img src="{% static 'images/skyblue.jpg' %}" alt="skyblue"/></a></li>
+					<li><a href="#." class="orange" id="orange"><img src="{% static 'images/orange.jpg' %}" alt="orange"/></a></li>
+					<li><a href="#." class="coral" id="coral"><img src="{% static 'images/coral.jpg' %}" alt="coral"/></a></li>
+					<li><a href="#." class="cyan" id="cyan"><img src="{% static 'images/cyan.jpg' %}" alt="cyan"/></a></li>
+					<li><a href="#." class="khaki" id="khaki"><img src="{% static 'images/khaki.jpg' %}" alt="khaki"/></a></li>
+					<li><a href="#." class="pink" id="pink"><img src="{% static 'images/pink.jpg' %}" alt="pink"/></a></li>
+					<li><a href="#." class="slateblue" id="slateblue"><img src="{% static 'images/slateblue.jpg' %}" alt="slateblue"/></a></li>
+					<li><a href="#." class="gold" id="gold"><img src="{% static 'images/gold.jpg' %}" alt="gold"/></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>--><!-- Style Switcher /- -->
+	
+	<a id="top"></a>
+	
+	<!-- Header Section -->
+	<header class="header_s">
+		<!-- SidePanel -->
+		<div id="slidepanel">
+			<!-- Top Header -->
+			<div class="container-fluid no-right-padding no-left-padding top-header">
+				<!-- Container -->
+				<div class="container">						
+					<div class="top-left">
+						<div class="lang-block">
+							<select class="selectpicker" data-placeholder="Choose a Language...">
+								<option value="EN">English</option>
+								<option value="RU">Russia</option>
+								<option value="SQ">German</option>
+							</select>
+						</div>
+					</div>
+					<div class="logo-block">
+						<a href="{% url 'bloges:index' %}" title="Logo"><span>{{ header_phone.header_single_letter }}</span>{{ header_phone.header_logo_text }}</a>
+					</div>
+					<div class="top-right">
+						<span><a href="tel:18001234567">{{ header_phone.header_phone }}</a></span>
+						<!-- <ul class="pages-dropdown">
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
+								<ul class="dropdown-menu">
+									<li><a href="#" title="Page 1">Page 1</a></li>
+									<li><a href="#" title="Page 2">Page 2</a></li>
+									<li><a href="#" title="Page 3">Page 3</a></li>
+								</ul>
+							</li>
+						</ul> -->
+						<div class="search">
+							<a href="javascript:void(0);" id="search" title="Search"><i class="fa fa-search"></i></a>
+						</div>
+					</div>
+					<!-- Search Box -->
+					<div class="search-box">
+						<span><i class="icon_close"></i></span>
+						<form><input type="text" class="form-control" placeholder="Enter a keyword and press enter..." /></form>
+					</div><!-- Search Box /- -->
+				</div><!-- Container /- -->
+			</div><!-- Top Header /- -->
+			
+		</div><!-- SidePanel /- -->
+		<!-- Menu Block -->
+		<div class="menu-block">
+			<!-- Container -->
+			<div class="container">
+				<!-- Ownavigation -->
+				<nav class="navbar ownavigation">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="{% url 'bloges:index' %}"><span>{{ header_phone.header_single_letter }}</span>{{ header_phone.header_logo_text }}</a>
+					</div>
+					<div id="navbar" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="{% url 'bloges:index' %}" title="Home">{{ header_phone.header_main }}</a></li>
+							<li><a href="#features-section" title="Features">{{ header_phone.header_features }}</a></li>
+							<li><a href="#gallery-section" title="Work">{{ header_phone.header_work }}</a></li>
+							<li><a href="#services-section" title="Services">{{ header_phone.header_service }}</a></li>
+							<li class="dropdown">
+								<a href="{% url 'bloges:post_list' %}" title="Blog" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">{{ header_phone.header_blog }}</a>
+								<i class="ddl-switch fa fa-angle-down"></i>
+								<ul class="dropdown-menu">
+									<li><a href="#" title="Blog Single">{{ header_phone.header_blog }}</a></li>
+								</ul>
+							</li>
+							<li><a href="#pricing-section" title="Pricing">{{ header_phone.header_price }}</a></li>
+							<li><a href="#team-section" title="About us">{{ header_phone.header_about }}</a></li>
+							<li><a href="#footer-main" title="Contact Us">{{ header_phone.header_contact }}</a></li>
+						</ul>
+					</div>
+					<div id="loginpanel" class="desktop-hide">
+						<div class="right" id="toggle">
+							<a id="slideit" href="#slidepanel"><i class="fo-icons fa fa-inbox"></i></a>
+							<a id="closeit" href="#slidepanel"><i class="fo-icons fa fa-close"></i></a>
+						</div>
+					</div>
+				</nav><!-- Ownavigation /- -->
+			</div><!-- Container /- -->
+		</div><!-- Menu Block /- -->
+	</header><!-- Header Section /- -->
+	
+	<div class="main-container">
+
+		{% block singlepost %}
+
+		{% endblock %}
+	</div>
+	
+	<!-- Footer Main -->
+	<footer id="footer-main" class="container-fluid no-left-padding no-right-padding footer-main">
+		<!-- Top Footer -->
+		<div class="container-fluid no-left-padding no-right-padding top-footer">
+			<!-- Container -->
+			<div class="container">
+				<div class="logo-block">
+					<h3><a href="#"><img src="{{ footer_content.footer_logo_img.url }}" alt="logo" /></a></h3>
+					<p>{{ footer_content.footer_title }}</p>
+					<ul>
+						<li><a href="{{ footer_content.footer_facebook }}" title="Facebook" target="_blank"><i class="fab fa-facebook"></i></a></li>
+						<li><a href="{{ footer_content.footer_twitter }}" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
+						<li><a href="{{ footer_content.footer_in }}" title="Linkedin" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+						<li><a href="{{ footer_content.footer_telegram }}" title="Tumblr" target="_blank"><i class="fab fa-tumblr"></i></a></li>
+						<li><a href="{{ footer_content.footer_vimeo }}" title="Vimeo" target="_blank"><i class="fab fa-vimeo"></i></a></li>
+						<li><a href="{{ footer_content.footer_pictures }}" title="Pinterest" target="_blank"><i class="fab fa-pinterest-p"></i></a></li>
+					</ul>
+				</div>
+				<div class="row">
+					<!-- Widget Contact -->
+					<div class="col-md-4 col-xs-6">
+						<aside class="widget widget_contact">
+							<h3 class="widget-title">{{ footer_content.footer_left_title }}</h3>
+							<div class="contact-tab">
+								<!-- Nav tabs -->
+								<ul class="nav nav-tabs" role="tablist">
+									<li role="presentation" class="active"><a href="#address" role="tab" data-toggle="tab"><i class="icon icon-Pointer"></i></a></li>
+									<li role="presentation"><a href="#email-add" role="tab" data-toggle="tab"><i class="icon icon-Mail"></i></a></li>
+								</ul>
+								<!-- Tab panes -->
+								<div class="tab-content">
+									<div role="tabpanel" class="tab-pane active" id="address">
+										<p>{{ footer_content.footer_left_map }}</p>
+									</div>
+									<div role="tabpanel" class="tab-pane" id="email-add">
+										<p><a href="tel:example@mail.com">{{ footer_content.footer_left_email }}</a></p>
+									</div>
+								</div>
+							</div>
+						</aside>
+					</div><!-- Widget Contact /- -->
+					<!-- Widget Working Hours -->
+					<div class="col-md-4 col-xs-6">
+						<aside class="widget widget_working_hours">
+							<h3 class="widget-title">{{ footer_content.footer_center_title }}</h3>	
+							<p>{{ footer_content.footer_center_desc }}</p>
+							<p>{{ footer_content.footer_center_work }}</p>
+							<p>{{ footer_content.footer_center_work1 }}</p>
+						</aside>
+					</div><!-- Widget Working Hours /- -->
+					<!-- Widget Flicker -->
+					<div class="col-md-4 col-xs-6">
+						<aside class="widget widget_flickr">
+							<h3 class="widget-title">{{ flick_name }}</h3>
+							<ul>
+								{% for flick in flick_img %}
+								<li><a href="#"><img src="{{ flick.footer_right_img.url }}" alt="Flicker" /></a></li>
+								<!--<li><a href="#"><img src="{% static 'images/flicker-2.jpg' %}" alt="Flicker" /></a></li>
+								<li><a href="#"><img src="{% static 'images/flicker-3.jpg' %}" alt="Flicker" /></a></li>
+								<li><a href="#"><img src="{% static 'images/flicker-4.jpg' %}" alt="Flicker" /></a></li>
+								<li><a href="#"><img src="{% static 'images/flicker-5.jpg' %}" alt="Flicker" /></a></li>
+								<li><a href="#"><img src="{% static 'images/flicker-6.jpg' %}" alt="Flicker" /></a></li>-->
+								{% endfor %}
+							</ul>
+						</aside> 
+					</div><!-- Widget Flicker /- -->
+				</div><!-- Row /- -->
+			</div><!-- Container /- -->
+		</div><!-- Top Footer -->
+		<!-- Bottom Footer -->
+		<div class="container-fluid bottom-footer no-left-padding no-right-padding">
+			<!-- Container -->
+			<div class="container">
+				<p><i class="fa fa-copyright"></i> 2021 Korsh Theme. All Rights Reserved</p>
+			</div><!-- Container -->
+		</div><!-- Bottom Footer /- -->
+	</footer><!-- Footer Main /- -->
+	
+	<!-- JQuery v1.12.4 -->
+	<script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+
+	<!-- Library - Js -->
+	<script src="{% static 'js/lib.js' %}"></script>
+
+
+	<script src="{% static 'js/uikit.min.js' %}"></script>
+	
+    <script src="{% static 'js/uikit-icons.min.js' %}"></script>
+	
+	
+	
+	<!-- Library - Theme JS -->
+	<script src="{% static 'js/functions.js' %}"></script>
+	
+</body>
+</html>
